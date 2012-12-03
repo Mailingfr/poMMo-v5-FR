@@ -54,7 +54,7 @@ class PommoTemplate extends Smarty {
 		$this->assign('config', @array (
 			'app' => array (
 				'path' => $pommo->_baseDir,
-				'weblink' => '<a href="http://pommo.sourceforge.net/">' . Pommo::_T('poMMo Website') . '</a>',
+				'weblink' => '<a href="http://www.mailingfr.com/">' . Pommo::_T('poMMo Website') . '</a>',
 				'dateformat' => PommoHelper::timeGetFormat()
 				),
 			'site_name' => $pommo->_config['site_name'],
