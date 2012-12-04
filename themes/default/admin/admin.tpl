@@ -36,7 +36,7 @@
 <br />
 <p>
 {t}Pour aller plus loin dans l'apprentissage de poMMo, lisez ceci{/t}: <br />
-<a href="http://copyzwriter.com/pommo/" title="Gérer soi-même sa liste avec poMMo">Gérer soi-même sa liste avec poMMo</a>
+<a href="http://www.mailingfr.com/apprendre-pommo/" title="Gérer soi-même sa liste avec poMMo">Gérer soi-même sa liste avec poMMo</a>
 </p>
 
 </div>
