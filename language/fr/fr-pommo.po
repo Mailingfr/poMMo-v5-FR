@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: poMMo PR11.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-23 17:34-0400\n"
-"PO-Revision-Date: 2012-10-02 08:54+0300\n"
+"PO-Revision-Date: 2012-12-04 09:58+0300\n"
 "Last-Translator: Ariel <ariel@gasymail.com>\n"
 "Language-Team: Translators <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -374,7 +374,7 @@ msgstr "Nom de la liste :"
 #. aardvark-development/themes/default/install.tpl
 #: pommo_theme_lang.php:177
 msgid "(ie. Brice's Mailing List)"
-msgstr "(ex. Liste de diffusion de pommo.org)"
+msgstr "(ex. Liste de diffusion de mailingfr.com)"
 
 #. aardvark-development/themes/default/install.tpl
 #: pommo_theme_lang.php:180
@@ -396,7 +396,7 @@ msgstr "URL du site web :"
 #. aardvark-development/themes/default/install.tpl
 #: pommo_theme_lang.php:189
 msgid "(ie. http://www.pommo-rocks.com/)"
-msgstr "(ex. http://www.pommo.org/)"
+msgstr "(ex. http://www.mailingfr.com/)"
 
 #. aardvark-development/themes/default/install.tpl
 #. aardvark-development/themes/default/admin/setup/config/users.tpl
