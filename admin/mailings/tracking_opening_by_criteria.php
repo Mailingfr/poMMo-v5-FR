@@ -42,7 +42,7 @@ ORDER BY mailgroup ASC
 $executionrequetegroupe = $id_connex->query($requetegroupe);
 while($arraygroupes = $executionrequetegroupe->fetch())
 {
-    $listegroupes[] = "<option value=\"".utf8_encode($arraygroupes[mailgroup])."\">".utf8_encode($arraygroupes[mailgroup])."</option>";
+    $listegroupes[] = "<option value=\"".utf8_encode($arraygroupes[mailgroup])."\">".$arraygroupes[mailgroup]."</option>";
 }
 if($listegroupes)
 {
@@ -85,7 +85,7 @@ if(isset($_GET['group_name']) and $_GET['group_name']!='/' and $_GET['group_name
         $group_name = utf8_decode($_GET['group_name']);
         $pagecriteria = "group_name=".urlencode($group_name);
         $where = $prefix."mailings.mailgroup LIKE '".$group_name;
-        $titre_aff = "Messages ouverts depuis le groupe <span style=\"color:orange\">".$group_name_utf8."</span>";
+        $titre_aff = "Messages ouverts depuis le groupe <span style=\"color:orange\">".$group_name."</span>";
     }
 }
 
@@ -128,7 +128,7 @@ if(isset($_GET['group_name'])){
         $group_name = $_GET['group_name'];
         $pagecriteria = "group_name=".urlencode($group_name);
         $where = $prefix."mailings.mailgroup LIKE '".$group_name;
-        $titre_aff = "Messages ouverts depuis le groupe <span style=\"color:orange\">".$group_name_utf8."</span>";
+        $titre_aff = "Messages ouverts depuis le groupe <span style=\"color:orange\">".$group_name."</span>";
     }
 }
 
@@ -308,7 +308,7 @@ if (!$result_titre)
 
 while($rowtitre = $result_titre->fetch())
 	{
-	$titre_aff = "Messages ouverts ayant pour titre <span style=\"color:orange\">".utf8_encode($rowtitre[subject])."</span> (ID-".$rowtitre[mailing_id].").";
+	$titre_aff = "Messages ouverts ayant pour titre <span style=\"color:orange\">".$rowtitre[subject]."</span> (ID-".$rowtitre[mailing_id].").";
 	}
 $result_titre = NULL;
 }
