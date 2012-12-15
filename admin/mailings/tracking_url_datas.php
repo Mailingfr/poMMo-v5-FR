@@ -53,7 +53,7 @@ ORDER BY mailgroup ASC
 $executionrequetegroupe = $id_connex->query($requetegroupe);
 while($arraygroupes = $executionrequetegroupe->fetch())
 {
-    $listegroupes[] = "<option value=\"".utf8_encode($arraygroupes[mailgroup])."\">".utf8_encode($arraygroupes[mailgroup])."</option>";
+    $listegroupes[] = "<option value=\"".utf8_encode($arraygroupes[mailgroup])."\">".$arraygroupes[mailgroup]."</option>";
 }
 if($listegroupes)
 {
