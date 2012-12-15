@@ -188,14 +188,14 @@ INNER JOIN table_mailings ON (table_mailing_id = o.mailing_id)
                     $aff_resultat.="<tr>";
                     $aff_resultat.="
                     <td style=\"text-align:center;\">$row[mailing_id]</td>
-                    <td><span style=\"color:none;\">".utf8_encode($row[subject])."</span></td>
-                    <td><a href='tracking_opening_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir les messages ouverts depuis ce groupe\">".utf8_encode($row[mailgroup])."</a></td>
+                    <td><span style=\"color:none;\">".$row[subject]."</span></td>
+                    <td><a href='tracking_opening_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir les messages ouverts depuis ce groupe\">".$row[mailgroup]."</a></td>
                     <td>$row[started]</td>
                     <td>$row[dateouverture]</td>
                     <td>$row[latence]</td>
                     <td><a href='tracking_opening_by_criteria.php?email=$row[email]' title=\"Voir les messages ouverts depuis cette adresse\">$row[email]</td>
                     </tr>";
-                    $titre_aff = "Statistiques d'ouverture du message intitul&eacute; <span style=\"color:orange\">".utf8_encode($row[subject])."</span> (ID-".$row[mailing_id].").";                    
+                    $titre_aff = "Statistiques d'ouverture du message intitul&eacute; <span style=\"color:orange\">".$row[subject]."</span> (ID-".$row[mailing_id].").";                    
                 }
            
         }

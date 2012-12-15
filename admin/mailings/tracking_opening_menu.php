@@ -212,9 +212,9 @@ FIN CALCUL NOMBRE DE PAGES ET AFFICHAGE DES LIENS
                     $aff_resultat.="<tr>";
                     $aff_resultat.="
                     <td style=\"text-align:center;\">$row2[mailing_id]<br /><input name=\"checkbox[]\" type=\"checkbox\" value=\"mailing_id=$row2[mailing_id]\" /></td>
-                    <td><a href='tracking_opening_datas.php?mailing_id=$row2[mailing_id]&amp;visitesparcampagne=$row2[messages_ouverts]' title=\"Voir les détails de cette campagne\">".utf8_encode($row2[subject])."</a></td>
+                    <td><a href='tracking_opening_datas.php?mailing_id=$row2[mailing_id]&amp;visitesparcampagne=$row2[messages_ouverts]' title=\"Voir les détails de cette campagne\">".$row2[subject]."</a></td>
                     <td>$row2[started]</td>
-                    <td>".utf8_encode($row2[mailgroup])."</td>
+                    <td>".$row2[mailgroup]."</td>
                     <td>$row2[sent]</td>
                     <td>$row2[messages_ouverts]</td>
                     <td>$row2[taux_ouvertures]%</td>

@@ -209,8 +209,8 @@ LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) AND (c.subscr
                     $aff_resultat.="<tr>";
                     $aff_resultat.="
                     <td style=\"text-align:center;\">$row[mailing_id]</td>
-                    <td><a href='tracking_url_by_criteria.php?mailing_id=$row[mailing_id]' title=\"Voir tous les clics enregistrés depuis ce message\">".utf8_encode($row[subject])."</a></td>
-                    <td><a href='tracking_url_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir tous les clics enregistrés depuis ce groupe\">".utf8_encode($row[mailgroup])."</a></td>
+                    <td><a href='tracking_url_by_criteria.php?mailing_id=$row[mailing_id]' title=\"Voir tous les clics enregistrés depuis ce message\">".$row[subject]."</a></td>
+                    <td><a href='tracking_url_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir tous les clics enregistrés depuis ce groupe\">".$row[mailgroup]."</a></td>
                     <td>$row[started]</td>
                     <td>$dateouverture</td>
                     <td>$row[dateclic]</td>
@@ -219,7 +219,7 @@ LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) AND (c.subscr
                     <td>$row[occurrence]</td>
                     <td><a href='tracking_url_by_criteria.php?title_page=".urlencode(addslashes($row[title_page]))."' title=\"Voir tous les clics enregistrés sur cette page\">".stripcslashes($row[title_page])."</a></td>
                     </tr>";
-                    $titre_aff = "Visites enregistrées sur la page <span style=\"color:orange\">".stripcslashes($row[title_page])."</span> depuis le message intitul&eacute; <span style=\"color:orange\">".utf8_encode($row[subject])."</span> (ID-".$row[mailing_id].").";                    
+                    $titre_aff = "Visites enregistrées sur la page <span style=\"color:orange\">".stripcslashes($row[title_page])."</span> depuis le message intitul&eacute; <span style=\"color:orange\">".$row[subject]."</span> (ID-".$row[mailing_id].").";                    
                 }
            
         }

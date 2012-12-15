@@ -338,7 +338,7 @@ $aff_resultat="";
 while($row = $result->fetch())
 {
 $aff_resultat.="<tr>";
-$aff_resultat.="<td>$row[mailing_id]</td><td><a href='tracking_opening_by_criteria.php?mailing_id=$row[mailing_id]' title=\"Voir les statistiques d'ouverture de ce message\">".utf8_encode($row[subject])."</a></td><td><a href='tracking_opening_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir les messages ouverts depuis ce groupe\">".utf8_encode($row[mailgroup])."</a></td><td>$row[started]</td><td>$row[openingtime]</td><td>$row[latence]</td><td><a href='tracking_opening_by_criteria.php?email=$row[email]' title=\"Voir les messages ouverts depuis cette adresse\">$row[email]</a></td></tr>";
+$aff_resultat.="<td>$row[mailing_id]</td><td><a href='tracking_opening_by_criteria.php?mailing_id=$row[mailing_id]' title=\"Voir les statistiques d'ouverture de ce message\">".$row[subject]."</a></td><td><a href='tracking_opening_by_criteria.php?group_name=".urlencode(addslashes($row[mailgroup]))."' title=\"Voir les messages ouverts depuis ce groupe\">".$row[mailgroup]."</a></td><td>$row[started]</td><td>$row[openingtime]</td><td>$row[latence]</td><td><a href='tracking_opening_by_criteria.php?email=$row[email]' title=\"Voir les messages ouverts depuis cette adresse\">$row[email]</a></td></tr>";
 }
 
 $result = NULL;
