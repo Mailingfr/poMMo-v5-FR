@@ -25,7 +25,7 @@ return null;
 }
 
 // Variables
-var title_page = escape(document.title);
+var title_page = escape(document.location.protocol + '//' + document.location.host + document.location.pathname);
 var subscriber_id = LireCookie("pommosubscriberid");
 var mailing_id = LireCookie("pommomailingid");
 

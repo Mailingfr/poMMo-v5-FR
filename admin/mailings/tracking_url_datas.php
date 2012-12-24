@@ -236,7 +236,7 @@ LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) AND (c.subscr
          
            while($arraychamps = $resultatrequetechamp->fetch())
            {
-              $listechamps[] = "<option value=\"".$arraychamps[field_id]."\">".utf8_encode($arraychamps[field_name])."</option>";
+              $listechamps[] = "<option value=\"".$arraychamps[field_id]."\">".$arraychamps[field_name]."</option>";
            }
          
            if($listechamps)
@@ -254,8 +254,8 @@ LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) AND (c.subscr
            $resultatrequetevaleurdechamp = $id_connex->query($requetevaleurdechamp);
            while($arrayvaleursdechamps = $resultatrequetevaleurdechamp->fetch())
            {
-               $valeursdechamps = unserialize(utf8_encode($arrayvaleursdechamps[field_array]));
-               $nomduchamp = utf8_encode($arrayvaleursdechamps[field_name]);
+               $valeursdechamps = unserialize($arrayvaleursdechamps[field_array]);
+               $nomduchamp = $arrayvaleursdechamps[field_name];
            }
            for($z=0; $z<count($valeursdechamps); $z++)
            {
