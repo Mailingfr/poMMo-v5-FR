@@ -161,7 +161,7 @@ FIN CALCUL NOMBRE DE PAGES ET AFFICHAGE DES LIENS
         {
            $mailingid[]=$row[mailing_id];
            $titlepage[]=addslashes($row[title_page]);
-           $donnees_initiales = array_map(create_function('$idmail, $pagetitle', 'return "SELECT c.mailing_id, table_mailing_subject, table_mailing_mailgroup, table_mailing_sent, DATE_FORMAT(table_mailing_started, \'%d/%m/%Y %Hh%imn%ss\') AS started, ROUND((TIMESTAMPDIFF(SECOND,started,FROM_UNIXTIME(AVG(DISTINCT(UNIX_TIMESTAMP(c.atime)))))/3600),2) AS latence, COUNT(DISTINCT(c.subscriber_id)) AS clics_uniques, ROUND(((COUNT(DISTINCT(o.subscriber_id))/table_mailing_sent)*100),2) AS taux_ouvertures, ROUND(((COUNT(DISTINCT(c.subscriber_id))/table_mailing_sent)*100),2) AS taux_clics, c.title_page FROM table_clickedurl AS c INNER JOIN (SELECT subscriber_id, MIN(atime) AS minatime FROM table_clickedurl WHERE mailing_id = ".$idmail." AND title_page LIKE \"".$pagetitle."\" GROUP BY subscriber_id) AS z ON c.atime = z.minatime AND c.subscriber_id = z.subscriber_id INNER JOIN table_subscribers ON (c.subscriber_id = table_subscriber_id) INNER JOIN table_mailings ON (table_mailing_id = c.mailing_id) LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) UNION ";'), array_values($mailingid), array_values($titlepage));
+           $donnees_initiales = array_map(create_function('$idmail, $pagetitle', 'return "SELECT c.mailing_id, table_mailing_subject, table_mailing_mailgroup, table_mailing_sent, DATE_FORMAT(table_mailing_started, \'%d/%m/%Y %Hh%imn%ss\') AS started, COUNT(DISTINCT(c.subscriber_id)) AS clics_uniques, ROUND(((COUNT(DISTINCT(o.subscriber_id))/table_mailing_sent)*100),2) AS taux_ouvertures, ROUND(((COUNT(DISTINCT(c.subscriber_id))/table_mailing_sent)*100),2) AS taux_clics, c.title_page FROM table_clickedurl AS c INNER JOIN (SELECT subscriber_id, MIN(atime) AS minatime FROM table_clickedurl WHERE mailing_id = ".$idmail." AND title_page LIKE \"".$pagetitle."\" GROUP BY subscriber_id) AS z ON c.atime = z.minatime AND c.subscriber_id = z.subscriber_id INNER JOIN table_subscribers ON (c.subscriber_id = table_subscriber_id) INNER JOIN table_mailings ON (table_mailing_id = c.mailing_id) LEFT JOIN table_opentracking AS o ON (c.mailing_id = o.mailing_id) UNION ";'), array_values($mailingid), array_values($titlepage));
         }
    
 /* 1) Les résultats de la 1ère requete (cf. ligne 33) sont récupérés en 2 arrays numérotés distincts $mailingid[] et $titlepage[].
@@ -229,7 +229,6 @@ FIN CALCUL NOMBRE DE PAGES ET AFFICHAGE DES LIENS
                     <td>$row2[clics_uniques]</td>
                     <td>$taux_ouvertures</td>
                     <td>$row2[taux_clics]%</td>
-                    <td>$row2[latence]</td>
                     <td><a href='tracking_url_datas.php?title_page=".urlencode(addslashes($row2[title_page]))."&amp;mailing_id=$row2[mailing_id]&amp;visitesparcampagne=$row2[clics_uniques]' title=\"Voir les détails de cette campagne\">".stripcslashes($row2[title_page])."</a></td>
                     </tr>";
                 }

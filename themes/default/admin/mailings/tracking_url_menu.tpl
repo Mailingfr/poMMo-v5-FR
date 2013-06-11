@@ -45,7 +45,6 @@ Aller &agrave; la page : {$affichagedesliensdespages}
 <td><b>Clics uniques</b></td>
 <td><b>CTR-1 (% ouvertures)</b></td>
 <td><b>CTR-2 (%&nbsp;clics)</b></td>
-<td><b>Latence (heures)</b></td>
 <td><b>Pages consultées</b></td>
 </tr>
 {$aff_resultat}
