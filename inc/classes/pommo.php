@@ -344,7 +344,7 @@ class Pommo {
 			
 			if (empty($pommo->_workDir)) {
 				echo ('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">');
-				echo ('<title>poMMo Error</title>'); // Very basics added for valid output
+				echo ('<title>poMMo - Erreur</title>'); // Very basics added for valid output
 				echo '<div><img src="' . $pommo->_baseUrl . 'themes/shared/images/icons/alert.png" alt="alert icon" style="vertical-align: middle; margin-right: 20px;"/> ' . $msg . '</div>';
 			}
 			else {
