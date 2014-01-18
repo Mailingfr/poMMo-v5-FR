@@ -25,7 +25,9 @@ ob_start();
 ini_set('display_errors', '1');
 
 // error_reporting(E_ALL); // [DEVELOPMENT]
-error_reporting(E_ALL ^ E_NOTICE); // [RELEASE] 
+if(defined('E_DEPRECATED')) {
+    error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+} else error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT); // [RELEASE] 
 
 // Include core components
 require(dirname(__FILE__) . '/inc/helpers/common.php'); // base helper functions
