@@ -92,6 +92,8 @@ if(isset($_GET['mail_id']) && is_numeric($_GET['mail_id'])) {
 	Pommo::kill();
 }
 
+}
+
 
 /**********************************
 	VALIDATION ROUTINES
