@@ -34,7 +34,7 @@ FCKConfig.ToolbarSets["Pommo"] = [
 	['TextColor','BGColor','-','FitWindow']
 ] ;
 
-FCKConfig.EnterMode = 'p' ;			// p | div | br
+FCKConfig.EnterMode = 'br' ;			// p | div | br
 FCKConfig.ShiftEnterMode = 'br' ;	// p | div | br
 FCKConfig.FontNames		= 'Arial;Comic Sans MS;Courier New;Eurostile;Gill Sans;Tahoma;Times New Roman;Verdana' ;
 FCKConfig.FirefoxSpellChecker	= true ;
