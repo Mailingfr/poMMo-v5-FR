@@ -34,7 +34,7 @@ FCKConfig.DocType = '' ;
 
 FCKConfig.BaseHref = '' ;
 
-FCKConfig.FullPage = false ;
+FCKConfig.FullPage = true ;
 
 // The following option determines whether the "Show Blocks" feature is enabled or not at startup.
 FCKConfig.StartupShowBlocks = false ;

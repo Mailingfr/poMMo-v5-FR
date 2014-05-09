@@ -7,7 +7,7 @@
  * Changes to this file will override the default settings.
  */
 
-FCKConfig.FullPage = false ;
+FCKConfig.FullPage = true ;
 FCKConfig.DocType = '' ;
 FCKConfig.BaseHref = '' ;
 
