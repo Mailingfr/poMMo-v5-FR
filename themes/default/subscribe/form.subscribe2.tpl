@@ -14,13 +14,13 @@
 </div>
 
 <div>
-<label class="required" for="email"><strong>{t}Your Email:{/t}</strong></label>
+<label class="required" for="email"><strong>{t}Your Email:{/t}</strong></label><br />
 <input type="text" size="32" maxlength="60" name="Email" id="email" value="{$Email|escape}" />
 </div>
 
 {foreach name=fields from=$fields key=key item=field}
 <div>
-<label for="field{$key}">{if $field.required == 'on'}<strong class="required">{/if}{$field.prompt}{if $field.required == 'on'}</strong>{/if}:</label>
+<label for="field{$key}">{if $field.required == 'on'}<strong class="required">{/if}{$field.prompt}{if $field.required == 'on'}</strong>{/if}:</label><br />
 
 {if $field.type == 'text' || $field.type == 'number'}
 <input type="text" size="32" name="d[{$key}]" id="field{$key}"{if isset($d.$key)} value="{$d.$key|escape}"{elseif $field.normally} value="{$field.normally|escape}"{/if} />

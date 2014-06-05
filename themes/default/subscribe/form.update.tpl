@@ -13,17 +13,17 @@
 </div>
 
 <div>
-<label class="required" for="email"><strong>{t}Your Email:{/t}</strong></label>
+<label class="required" for="email"><strong>{t}Your Email:{/t}</strong></label><br />
 <input type="text" size="32" maxlength="60" name="email" id="email" value="{$email|escape}" readonly="readonly" />
 </div>
 
 <div>
-<label for="email">{t}New Email:{/t}</label>
+<label for="newemail">{t}New Email:{/t}</label><br />
 <input type="text" size="32" maxlength="60" name="newemail" id="newemail" value="{$newemail|escape}" />
 </div>
 
 <div>
-<label for="email">{t}Verify New Email:{/t}</label>
+<label for="newemail2">{t}Verify New Email:{/t}</label><br />
 <input type="text" size="32" maxlength="60" name="newemail2" id="newemail2" value="{$newemail2|escape}" />
 </div>
 
@@ -31,7 +31,7 @@
 <div>
 {* DON'T DISPLAY COMMENT FIELDS ON UPDATE FORM. A COMMENT FIELD IS PROVIDED @ user/update.tpl FOR UNSUBSCRIBE *}
 
-<label{if $field.required == 'on'} class="required"{/if} for="field{$key}">{$field.prompt}:</label>
+<label{if $field.required == 'on'} class="required"{/if} for="field{$key}">{$field.prompt}:</label><br />
 
 {if $field.type == 'checkbox'}
 <input type="checkbox" name="d[{$key}]" id="field{$key}"{if $d.$key == "on"} checked="checked"{/if} />
@@ -48,7 +48,7 @@
 <textarea name="d[{$key}]" id="field{$key}" rows="3" cols="33" maxlength="255">{if isset($d.$key)}{$d.$key}{elseif $field.normally}{$field.normally}{/if}</textarea>
 
 {else}
-<input type="text" {if $field.type == 'date'}class="date-pick" size=12 {else}size="32" {/if} name="d[{$key}]" id="field{$key}"{if isset($d.$key)} value="{$d.$key|escape}"{/if} />
+<input type="text" {if $field.type == 'date'}class="date-pick" size="12" {else}size="32" {/if} name="d[{$key}]" id="field{$key}"{if isset($d.$key)} value="{$d.$key|escape}"{/if} />
 
 {/if}
 </div>

@@ -40,7 +40,7 @@ if (!empty ($_POST['field_name'])) {
 	$field = PommoField::make(array(
 		'name' => $_POST['field_name'],
 		'type' => $_POST['field_type'],
-		'prompt' => 'Entrez les informations requises',
+		'prompt' => $_POST['field_name'],
 		'required' => 'off',
 		'active' => 'off'
 	));

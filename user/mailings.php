@@ -67,19 +67,21 @@ if(isset($_GET['mail_id']) && is_numeric($_GET['mail_id'])) {
 			Pommo::requireOnce($pommo->_baseDir.'inc/helpers/personalize.php'); // require once here so that mailer can use
 			Pommo::requireOnce($pommo->_baseDir.'inc/helpers/personalizetitle.php'); // title personalization			
 			
-			$matches = array();
-			preg_match('/\[\[[^\]]+]]/', $input['body'], $matches);
-			if (!empty($matches)) {
+			$matches1 = array();
+			preg_match('/\[\[[^\]]+]]/', $input['body'], $matches1);
+			if (!empty($matches1)) {
 				$pBody = PommoHelperPersonalize::search($input['body']);
 				$input['body'] = PommoHelperPersonalize::replace($input['body'], $subscriber, $pBody);				
 			}
-			preg_match('/\[\[[^\]]+]]/',  $input['altbody'], $matches);
-			if (!empty($matches)) {
+                        $matches2 = array();
+			preg_match('/\[\[[^\]]+]]/',  $input['altbody'], $matches2);
+			if (!empty($matches2)) {
 				$pAltBody = PommoHelperPersonalize::search($input['altbody']);
 				$input['altbody'] = PommoHelperPersonalize::replace($input['altbody'], $subscriber, $pAltBody);	
 			}
-			preg_match('/\[\[[^\]]+]]/', $input['subject'], $matches);
-			if (!empty($matches)) {
+                        $matches3 = array();
+			preg_match('/\[\[[^\]]+]]/', $input['subject'], $matches3);
+			if (!empty($matches3)) {
 				$pSubject = PommoHelperPersonalizeTitle::search($input['subject']);
 				$input['subject'] = PommoHelperPersonalizeTitle::replace($input['subject'], $subscriber, $pSubject);
 			}

@@ -91,11 +91,14 @@ Pommo::requireOnce($pommo->_baseDir.'inc/helpers/personalize.php'); // require o
 Pommo::requireOnce($pommo->_baseDir.'inc/helpers/personalizetitle.php'); // require once here so that mailer can use
 if(!isset($pommo->_session['personalization'])) {
 	$pommo->_session['personalization'] = FALSE;
-	$matches = array();
-	preg_match('/\[\[[^\]]+]]/', $mailing->_mailing['body'], $matches);
-	if (!empty($matches))
+	$matches1 = array();
+        $matches2 = array();
+        $matches3 = array();
+	preg_match('/\[\[[^\]]+]]/', $mailing->_mailing['body'], $matches1);
+        preg_match('/\[\[[^\]]+]]/', $mailing->_mailing['altbody'], $matches2);
+        preg_match('/\[\[[^\]]+]]/', $mailing->_mailing['subject'], $matches3);
+	if (!empty($matches1) || !empty($matches2) || !empty($matches3))
 		$pommo->_session['personalization'] = TRUE;
-	preg_match('/\[\[[^\]]+]]/',  $mailing->_mailing['altbody'], $matches);
 
 	// cache personalizations in session
 	if ($pommo->_session['personalization']) {

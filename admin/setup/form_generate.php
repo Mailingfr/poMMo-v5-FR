@@ -64,7 +64,7 @@ $form_name = "signup";
 
 <!--	Le champ d'adresse Email doit avoir pour nom "Email" -->
 <div>
-<label for="email"><strong><?php echo Pommo::_T('Your Email:'); ?></strong></label>
+<label for="email"><strong><?php echo Pommo::_T('Your Email:'); ?></strong></label><br />
 <input type="text" name="Email" id="email" maxlength="60" />
 </div>
 
@@ -74,9 +74,9 @@ foreach (array_keys($fields) as $field_id) {
 	$field = & $fields[$field_id];
 
 	if ($field['required'] == 'on')
-		echo "<!--	Ici commence le champ obligatoire \"".$field['name']."\" -->\r\n<div>\r\n<label for=\"field".$field_id."\"><strong>".$field['prompt'].":</strong></label>\r\n";
+		echo "<!--	Ici commence le champ obligatoire \"".$field['name']."\" -->\r\n<div>\r\n<label for=\"field".$field_id."\"><strong>".$field['prompt'].":</strong></label><br />\r\n";
 	else
-		echo "<!--	Ici commence le champ \"".$field['name']."\" -->\r\n<div>\r\n<label for=\"field".$field_id."\">".$field['prompt'].":</label>\r\n";
+		echo "<!--	Ici commence le champ \"".$field['name']."\" -->\r\n<div>\r\n<label for=\"field".$field_id."\">".$field['prompt'].":</label><br />\r\n";
 
 	switch ($field['type']) {
 		case "checkbox": // checkbox	

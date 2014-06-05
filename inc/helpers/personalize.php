@@ -190,7 +190,7 @@ class PommoHelperPersonalize {
 					$replace = $GLOBALS['pommo']->_http.$GLOBALS['pommo']->_baseUrl.'user/update.php?email='.$s['email'].'&code='.PommoSubscriber::getActCode($s);
 					break;
 				case '!weblink':
-					$replace = $GLOBALS['pommo']->_http.$GLOBALS['pommo']->_baseUrl.'user/mailings.php?mail_id='.$_GET['id'].'&email='.$s['email'].'&code='.PommoSubscriber::getActCode($s);
+					$replace = $GLOBALS['pommo']->_http.$GLOBALS['pommo']->_baseUrl.'user/mailings.php?mail_id='.$_GET['id'].'&id='.$_GET['id'].'&email='.$s['email'].'&code='.PommoSubscriber::getActCode($s);
 					break;
 				case '!subscriber_id':
 					$replace = $s['id'];
@@ -199,7 +199,8 @@ class PommoHelperPersonalize {
 					$replace = $_GET['id'];
 					break;
 				default:
-					$replace = $s['data'][$p['field_id']];
+					if(isset($p['field_id']))
+                                        $replace = $s['data'][$p['field_id']];
 					break;
 			}
 			
