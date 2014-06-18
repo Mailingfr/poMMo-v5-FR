@@ -91,6 +91,7 @@ elseif (!empty ($_POST['resetPassword'])) { // TODO -- visit this function later
 		}
 
 		// create a password change request, send confirmation mail
+		PommoHelperMessages::resetDefault('password');
 		$subscriber = array('id' => 0);
 		$code = PommoPending::add($subscriber,'password');
 		PommoHelperMessages::sendMessage(array('to' => $pommo->_config['admin_email'], 'code' => $code, 'type' => 'password'));
